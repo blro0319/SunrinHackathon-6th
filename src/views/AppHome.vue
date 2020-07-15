@@ -3,7 +3,7 @@
         <div class="banner">
             <h1>
                 Sunrin<br>
-                Hackathon
+                Hackathon 6th
             </h1>
             <hackathon-timer eventname="apply-start" class="timer" />
         </div>
