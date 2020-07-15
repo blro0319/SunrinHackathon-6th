@@ -1,4 +1,4 @@
-# minecrafter
+# SunrinHackathon-6th
 
 ## Project setup
 ```
