@@ -1,4 +1,4 @@
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Prop } from "vue-property-decorator";
 import HackathonEvents, { Timestamp } from "@/lib/HackathonEvents";
 
 class Time {
@@ -29,16 +29,30 @@ class Time {
 
 @Component
 export default class HackathonTimer extends Vue {
-    currentEvent = { } as Timestamp;
-    interval = { } as number;
-    displayTime: Time = new Time(0, 0, 0, 0);
+    @Prop({
+        type: String,
+        default: "",
+        validator: (value: string): boolean => {
+            return Object.keys(HackathonEvents).concat([""]).includes(value);
+        }
+    }) private eventname!: string;
+
+    private interval!: number;
+    public currentEvent!: Timestamp;
+    public displayTime: Time = new Time(0, 0, 0, 0);
 
     created() {
-        for (let i = 0; i < HackathonEvents.length; i++) {
-            if (Date.now() < HackathonEvents[i].date.getTime()) {
-                this.currentEvent = HackathonEvents[i];
-                break;
+        let eventNames = Object.keys(HackathonEvents);
+
+        if (this.eventname == "") {
+            for (let i = 0; i < eventNames.length; i++) {
+                if (Date.now() < HackathonEvents[eventNames[i]].date.getTime()) {
+                    this.currentEvent = HackathonEvents[eventNames[i]];
+                    break;
+                }
             }
+        } else {
+            this.currentEvent = HackathonEvents[this.eventname];
         }
     }
     mounted() {

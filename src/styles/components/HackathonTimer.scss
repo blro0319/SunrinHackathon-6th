@@ -26,16 +26,18 @@
         bottom: 12px;
 
         padding: {
-            top: 16px;
-            bottom: 16px;
-            left: 24px;
-            right: 24px;
+            top: 24px;
+            bottom: 24px;
+            left: 16px;
+            right: 16px;
         }
 
-        border: 1px solid $text-color-white;
+        border: 2px solid $text-color-white;
 
         .digits {
             display: flex;
+
+            width: 96px;
 
             flex-direction: column;
 
@@ -44,18 +46,22 @@
             text-align: center;
 
             .value {
-                font-size: xxx-large;
-                font-weight: bold;
+                font: {
+                    size: xxx-large;
+                    weight: bold;
+                }
             }
             .name {
                 font-size: small;
-                font-weight: normal;
                 text-transform: uppercase;
             }
         }
         .division {
-            border-right: 1px solid $text-color-white;
-            margin: 0 16px;
+            display: block;
+
+            margin: 0 8px;
+
+            border-right: 1px solid rgba(255, 255, 255, 0.25);
         }
     }
 }

@@ -1,6 +1,12 @@
 <template>
     <div class="home">
-        <hackathon-timer />
+        <div class="banner">
+            <h1>
+                Sunrin<br>
+                Hackathon
+            </h1>
+            <hackathon-timer eventname="apply-end" class="timer" />
+        </div>
     </div>
 </template>
 

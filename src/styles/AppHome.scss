@@ -1,9 +1,19 @@
 @import "./variable";
 
-header {
-    text-align: center;
+.banner {
+    padding: 64px 0;
 
     h1 {
-        font-size: xxx-large;
+        margin-bottom: 32px;
+
+        font: {
+            size: xxx-large;
+            weight: bold;
+        }
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .timer {
+        margin: 0 auto;
     }
 }
