@@ -1,0 +1,36 @@
+// Google material icons
+@font-face {
+    font: {
+        family: "Material Icons";
+        style: normal;
+        weight: 400;
+    }
+    src: url("./assets/fonts/MaterialIcons-Regular.eot"); // For IE6-8
+    src: local("Material Icons"),
+         local("MaterialIcons-Regular"),
+         url("./assets/fonts/MaterialIcons-Regular.woff2") format("woff2"),
+         url("./assets/fonts/MaterialIcons-Regular.woff")  format('woff'),
+         url("./assets/fonts/MaterialIcons-Regular.ttf")   format('truetype');
+}
+.material-icons {
+    display: inline-block;
+
+    font: {
+        family: "Material Icons";
+        weight: normal;
+        style: normal;
+        size: 24px;
+    }
+    text-transform: none;
+
+    direction: ltr;
+    word-wrap: normal;
+    white-space: nowrap;
+    letter-spacing: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased; // All WebKit browsers
+    text-rendering: optimizeLegibility;  // Safari and Chrome
+    -moz-osx-font-smoothing: grayscale;  // Firefox
+    font-feature-settings: "liga";       // IE
+}
