@@ -10,20 +10,24 @@
     .title {
         width: fit-content;
         margin: 0 auto;
-        padding: 0 8px;
+        padding: 4px 8px;
 
-        background-color: $base-background-color;
+        background-color: $text-color-white;
 
         z-index: 1;
 
-        font-size: large;
+        color: $text-color-black;
+        font: {
+            size: large;
+            weight: bold;
+        }
         text-align: center;
     }
     .timer {
         display: flex;
 
         position: relative;
-        bottom: 12px;
+        bottom: 17px;
 
         padding: {
             top: 24px;

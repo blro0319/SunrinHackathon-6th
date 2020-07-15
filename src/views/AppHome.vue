@@ -5,7 +5,7 @@
                 Sunrin<br>
                 Hackathon
             </h1>
-            <hackathon-timer eventname="apply-end" class="timer" />
+            <hackathon-timer eventname="apply-start" class="timer" />
         </div>
     </div>
 </template>

@@ -37,7 +37,6 @@ export default class HackathonTimer extends Vue {
         }
     }) private eventname!: string;
 
-    private interval!: number;
     public currentEvent!: Timestamp;
     public displayTime: Time = new Time(0, 0, 0, 0);
 
@@ -56,13 +55,14 @@ export default class HackathonTimer extends Vue {
         }
     }
     mounted() {
-        this.interval = setInterval(() => {
-            let timer = this.currentEvent.date.getTime() - Date.now();
+        setInterval(() => {
+            let timer: number = this.currentEvent.date.getTime() - Date.now();
             this.displayTime = this.milisecToTimeString(timer);
         });
     }
 
     milisecToTimeString(value: number): Time {
+        value = Math.abs(value);
         let sec = Math.floor(value / 1000);
         let min = Math.floor(sec / 60);
         let hou = Math.floor(min / 60);

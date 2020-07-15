@@ -3,6 +3,10 @@
 .banner {
     padding: 64px 0;
 
+    background: radial-gradient(circle at 50%, #222222, #111111);
+
+    color: $text-color-white;
+
     h1 {
         margin-bottom: 32px;
 
