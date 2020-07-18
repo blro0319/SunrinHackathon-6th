@@ -21,3 +21,75 @@
         margin: 0 auto;
     }
 }
+
+.calander {
+    display: flex;
+
+    width: fit-content;
+    margin: 0 auto;
+    padding: 64px 0;
+
+    table {
+        border: 1px solid #222222;
+
+        &:first-child {
+            margin-right: 16px;
+        }
+    }
+    tr {
+        > td,
+        > th {
+            width: 128px;
+
+            border: 1px solid #222222;
+
+            text-align: center;
+        }
+    }
+}
+
+.menu {
+    width: fit-content;
+    margin: 0 auto;
+
+    .title {
+        display: block;
+
+        margin-bottom: 16px;
+
+        font-size: xx-large;
+        text-align: center;
+    }
+    .contents {
+        display: flex;
+
+        .left {
+            margin-right: 32px;
+        }
+        .item {
+            display: flex;
+
+            width: 256px;
+
+            justify-content: space-between;
+
+            .name {
+                display: flex;
+
+                flex-grow: 1;
+
+                align-items: center;
+            }
+            .name::after {
+                content: "";
+
+                height: 1px;
+                margin: 0 8px;
+
+                flex-grow: 1;
+
+                border-bottom: 1px dashed #444444;
+            }
+        }
+    }
+}
