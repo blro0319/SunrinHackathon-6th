@@ -6,9 +6,6 @@
     margin: 0;
     padding: 0;
 
-    border: none;
-    outline: none;
-
     background: none;
 
     box-sizing: border-box;
@@ -36,8 +33,6 @@ html {
 
     overflow: hidden;
 
-    background-color: $base-background-color;
-
     color: $text-color-black;
     font: {
         size: 15px;
@@ -56,9 +51,10 @@ html {
         // Full height
         height: 100%;
 
-        #app {
-            // Full height
-            min-height: 100%;
-        }
+        overflow: hidden auto;
     }
+}
+
+#app {
+    background-color: $base-background-color;
 }

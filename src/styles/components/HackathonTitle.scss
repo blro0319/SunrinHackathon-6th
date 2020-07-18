@@ -1,0 +1,63 @@
+@import "../variable";
+
+// Animations //
+// Title
+@keyframes flashing-title {
+    0%,
+    20%,
+    22%,
+    38%,
+    40%,
+    41%,
+    44%,
+    72%,
+    74%,
+    74.5%,
+    76%,
+    77%,
+    90% {
+        opacity: 1;
+    }
+    21%,
+    39%,
+    42%,
+    73%,
+    75%,
+    78%,
+    85% {
+        opacity: 0;
+    }
+}
+
+// Disable animations when prefers reduced motion
+@media (prefers-reduced-motion) {
+    @keyframes flashing-title {
+        0%, 100% {
+            opacity: 1;
+        }
+    }
+}
+
+.hackathon-title {
+    width: fit-content;
+}
+
+.sunrin {
+    display: block;
+
+    width: 840px;
+    margin: 0 auto;
+}
+.title {
+    position: relative;
+
+    .lit {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        animation-name: flashing-title;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+}

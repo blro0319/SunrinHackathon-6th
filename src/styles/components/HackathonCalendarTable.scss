@@ -1,0 +1,134 @@
+@import "../variable";
+
+@function diamondShapeImage($color) {
+    $color: rgba($color, 0.999);
+    @return url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3e%3cdefs%3e%3cstyle%3e.e2afec89-0d9f-4226-b7c9-14bd42cc1cff{fill:#{$color};}%3c/style%3e%3c/defs%3e%3cg id='ada198c5-ed36-4124-b44a-4bd6d147a139' data-name='레이어 2'%3e%3cg id='a6e92f1d-6ed7-4aae-9eaf-10634f5418d8' data-name='레이어 1'%3e%3crect class='e2afec89-0d9f-4226-b7c9-14bd42cc1cff' x='18.75' y='18.75' width='90.51' height='90.51' transform='translate(-26.51 64) rotate(-45)'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e")
+};
+
+.hackathon-calendar-table {
+    display: flex;
+
+    width: fit-content;
+
+    overflow: hidden;
+}
+
+$date-width: 320px;
+$date-gap: 16px;
+$date-border-color: #bbbbbb;
+.date {
+    $title-height: 64px;
+    $title-background-color: $text-color-black;
+
+    width: $date-width;
+
+    &:not(:first-child) .title::before {
+            left: -$title-height / 2;
+
+            background-image: diamondShapeImage($base-background-color);
+    }
+    &:not(:last-child) {
+        margin-right: $date-gap;
+
+        .title::after {
+            z-index: 1;
+            right: -$title-height / 2;
+
+            background-image: diamondShapeImage($title-background-color);
+        }
+    }
+
+    .title {
+        display: flex;
+
+        position: relative;
+
+        width: $date-width;
+        height: $title-height;
+
+        background-color: $title-background-color;
+
+        justify-content: center;
+        align-items: center;
+
+        color: $text-color-white;
+        font-size: large;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &::before,
+        &::after {
+            content: "";
+
+            display: block;
+
+            position: absolute;
+
+            width: $title-height;
+            height: $title-height;
+
+            background-size: $title-height;
+        }
+    }
+
+    .list {
+        display: flex;
+
+        border: 1px solid $date-border-color;
+        border-top: none;
+
+        flex-direction: column;
+
+        .event {
+            display: flex;
+
+            font-size: medium;
+
+            align-items: stretch;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $date-border-color;
+            }
+
+            .time {
+                display: flex;
+
+                flex: {
+                    basis: 64px;
+                    shrink: 0;
+                    direction: column;
+                }
+
+                background-color: rgba(0, 0, 0, 0.05);
+
+                justify-content: center;
+
+                text-align: center;
+            }
+            .contents {
+                display: flex;
+
+                padding: 8px;
+
+                border-left: 1px solid $date-border-color;
+
+                flex: {
+                    grow: 1;
+                    direction: column;
+                }
+
+                word-break: keep-all;
+
+                .desc {
+                    margin-top: 8px;
+                    padding-top: 8px;
+
+                    border-top: 1px dashed $date-border-color;
+
+                    color: $text-color-black-disable;
+                    font-size: small;
+                }
+            }
+        }
+    }
+}
