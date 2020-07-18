@@ -1,33 +1,45 @@
 @import "../variable";
 
 .hackathon-timer {
+    --theme-color: #{$base-theme-color-dark};
+    --theme-color-shadow: transparent;
+    $theme-color: var(--theme-color);
+    $theme-color-shadow: var(--theme-color-shadow);
+
     display: flex;
 
     width: fit-content;
 
     flex-direction: column;
 
+    &:hover {
+        --theme-color: #{$base-theme-color};
+        --theme-color-shadow: #{rgba($base-theme-color, 0.75)};
+    }
+
     .title {
-        width: fit-content;
-        margin: 0 auto;
-        padding: 4px 10px;
+        display: flex;
 
-        background-color: $text-color-white;
+        width: 100%;
+        height: 32px;
 
-        z-index: 1;
+        border: 2px solid $theme-color;
+        border-radius: 2px;
 
-        color: $text-color-black;
+        justify-content: center;
+        align-items: center;
+
+        color: $theme-color;
         font: {
             size: large;
             weight: bold;
         }
         text-align: center;
+
+        transition: border-color 0.1s, color 0.1s;
     }
     .timer {
         display: flex;
-
-        position: relative;
-        bottom: 17px;
 
         padding: {
             top: 24px;
@@ -35,8 +47,6 @@
             left: 16px;
             right: 16px;
         }
-
-        border: 2px solid $text-color-white;
 
         .digits {
             display: flex;
@@ -47,16 +57,22 @@
 
             justify-content: center;
 
+            color: $theme-color;
             text-align: center;
 
+            transition: color 0.1s;
+
             .value {
-                font: {
-                    size: xxx-large;
-                    weight: bold;
-                }
+                font-size: xxx-large;
+                text-shadow: 0 0 8px $theme-color-shadow;
+
+                transition: text-shadow 0.1s;
             }
             .name {
-                font-size: small;
+                font: {
+                    size: medium;
+                    weight: bold;
+                }
                 text-transform: uppercase;
             }
         }
@@ -66,7 +82,42 @@
             margin: 0 8px;
 
             border: none;
-            border-right: 1px solid rgba(255, 255, 255, 0.25);
+            border-right: 1px solid $theme-color;
+
+            transition: border-color 0.1s;
+        }
+    }
+    .footer {
+        display: block;
+
+        width: 100%;
+        height: 32px;
+
+        border: 2px solid $theme-color;
+        border-radius: 2px;
+
+        transition: border-color 0.1s;
+    }
+    .tags {
+        width: 100%;
+
+        .tag {
+            display: block;
+
+            width: 100%;
+            height: 10px;
+            margin: 2px 0;
+
+            background: {
+                image: url("../assets/images/tag.png");
+                repeat: repeat-x;
+                size: contain;
+            }
+        }
+        @for $i from 1 through 2 {
+            .tag:nth-child(#{$i}) {
+                background-position: $i * 31%;
+            }
         }
     }
 }

@@ -9,8 +9,8 @@
     src: local("Material Icons"),
          local("MaterialIcons-Regular"),
          url("./assets/fonts/MaterialIcons-Regular.woff2") format("woff2"),
-         url("./assets/fonts/MaterialIcons-Regular.woff")  format('woff'),
-         url("./assets/fonts/MaterialIcons-Regular.ttf")   format('truetype');
+         url("./assets/fonts/MaterialIcons-Regular.woff")  format("woff"),
+         url("./assets/fonts/MaterialIcons-Regular.ttf")   format("truetype");
 }
 .material-icons {
     display: inline-block;
@@ -30,7 +30,22 @@
     line-height: 1;
 
     -webkit-font-smoothing: antialiased; // All WebKit browsers
-    text-rendering: optimizeLegibility;  // Safari and Chrome
-    -moz-osx-font-smoothing: grayscale;  // Firefox
-    font-feature-settings: "liga";       // IE
+    text-rendering: optimizeLegibility; // Safari and Chrome
+    -moz-osx-font-smoothing: grayscale; // Firefox
+    font-feature-settings: "liga"; // IE
+}
+
+@font-face {
+    font-family: "Godo";
+    font-style: normal;
+    font-weight: 400;
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2") format("woff2"),
+         url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff")  format("woff");
+}
+@font-face {
+    font-family: "Godo";
+    font-style: normal;
+    font-weight: 700;
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2") format("woff2"),
+         url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff")  format("woff");
 }

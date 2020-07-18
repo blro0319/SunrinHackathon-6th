@@ -30,6 +30,11 @@
                 <span class="name">초</span>
             </div>
         </div>
+        <span class="footer"></span>
+        <div class="tags">
+            <span class="tag"></span>
+            <span class="tag"></span>
+        </div>
     </div>
 </template>
 

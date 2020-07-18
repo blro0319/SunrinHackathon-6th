@@ -45,19 +45,43 @@
 .sunrin {
     display: block;
 
-    width: 840px;
+    width: 80%;
     margin: 0 auto;
 }
 .title {
     position: relative;
 
+    width: 1024px;
+
+    .lit,
+    .unlit {
+        width: 100%;
+    }
     .lit {
         position: absolute;
         top: 0;
         left: 0;
 
-        animation-name: flashing-title;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
+        animation: {
+            name: flashing-title;
+            duration: 10s;
+            iteration-count: infinite;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .sunrin {
+        width: 80%;
+    }
+    .title {
+        width: 100%;
+        padding: 0 32px;
+
+        .lit {
+            left: 32px;
+
+            width: calc(100% - 64px);
+        }
     }
 }

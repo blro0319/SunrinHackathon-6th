@@ -5,16 +5,15 @@
 }
 
 #hackathonBanner {
-    padding: {
-        top: 128px;
-        bottom: 64px;
-    };
+    padding: 128px 0;
+
+    background-image: radial-gradient(ellipse 150% 100% at top, $base-theme-background-color 99.8%, $base-background-color 100%);
 
     color: $text-color-white;
 
     .title {
         margin: {
-            bottom: 32px;
+            bottom: 64px;
             left: auto;
             right: auto;
         };
@@ -28,9 +27,9 @@
     padding: 64px 0;
 
     h2 {
-        margin-bottom: 16px;
+        margin-bottom: 32px;
 
-        font-size: xx-large;
+        font-size: xxx-large;
         text-align: center;
     }
     .table {
