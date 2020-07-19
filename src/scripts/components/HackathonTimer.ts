@@ -41,15 +41,8 @@ export default class HackathonTimer extends Vue {
     public displayTime: Time = new Time(0, 0, 0, 0);
 
     created() {
-        let eventNames = Object.keys(HackathonEvents);
-
         if (this.eventname == "") {
-            for (let i = 0; i < eventNames.length; i++) {
-                if (Date.now() < HackathonEvents[eventNames[i]].date.getTime()) {
-                    this.currentEvent = HackathonEvents[eventNames[i]];
-                    break;
-                }
-            }
+            this.findTargetEvent();
         } else {
             this.currentEvent = HackathonEvents[this.eventname];
         }
@@ -57,19 +50,33 @@ export default class HackathonTimer extends Vue {
     mounted() {
         setInterval(() => {
             let timer: number = this.currentEvent.date.getTime() - Date.now();
+            if (this.eventname == "" && timer <= 0) {
+                this.findTargetEvent();
+                timer = this.currentEvent.date.getTime() - Date.now();
+            }
+
             this.displayTime = this.milisecToTimeString(timer);
-        });
+        }, 10);
     }
 
-    milisecToTimeString(value: number): Time {
-        value = Math.abs(value);
-        let sec = Math.floor(value / 1000);
-        let min = Math.floor(sec / 60);
-        let hou = Math.floor(min / 60);
+    findTargetEvent() {
+        let eventNames = Object.keys(HackathonEvents);
+        for (let i = 0; i < eventNames.length; i++) {
+            if (Date.now() < HackathonEvents[eventNames[i]].date.getTime()) {
+                this.currentEvent = HackathonEvents[eventNames[i]];
+                break;
+            }
+        }
+    }
+    milisecToTimeString(val: number): Time {
+        val = Math.abs(val);
+        let sec  = Math.floor(val / 1000);
+        let min  = Math.floor(sec / 60);
+        let hou  = Math.floor(min / 60);
         let date = Math.floor(hou / 24);
 
         let result = new Time(date, hou % 24, min % 60, sec % 60);
 
         return result;
-    } 
+    }
 }

@@ -5,9 +5,17 @@
 }
 
 #hackathonBanner {
+    position: relative;
+
     padding: 128px 0;
 
-    background-image: radial-gradient(ellipse 150% 100% at top, $base-theme-background-color 99.8%, $base-background-color 100%);
+    background: {
+        image: url("../assets/images/moon.png"), radial-gradient(ellipse 150% 100% at top, $base-theme-background-color 99.8%, $base-background-color 100%);
+        position: bottom 30% right 10%, center;
+        size: 256px, 100%;
+        repeat: no-repeat;
+        blend-mode: screen;
+    }
 
     color: $text-color-white;
 
@@ -20,6 +28,49 @@
     }
     .timer {
         margin: 0 auto;
+    }
+    .moon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+#hackathonNotice {
+    padding: {
+        top: 128px;
+        bottom: 64px;
+    };
+
+    h2 {
+        margin-bottom: 32px;
+
+        font-size: xxx-large;
+        text-align: center;
+    }
+    h3 {
+        margin-bottom: 16px;
+
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    .use-discord {
+        display: flex;
+
+        width: fit-content;
+        margin: 0 auto;
+
+        align-items: center;
+
+        .discord-brand {
+            width: 128px;
+        }
+        .desc {
+            font-size: medium;
+
+            line-height: 1.75em;
+        }
     }
 }
 
@@ -34,6 +85,46 @@
     }
     .table {
         margin: 0 auto;
+    }
+
+    .hidden {
+        position: relative;
+
+        width: fit-content;
+        height: 100%;
+        margin: 0 auto;
+
+        .info {
+            display: flex;
+
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            justify-content: center;
+            align-items: center;
+
+            .desc {
+                padding: 8px 16px;
+
+                border: 3px solid $base-theme-color;
+                border-radius: 3px;
+
+                background-color: $base-theme-background-color;
+
+                color: $base-theme-color;
+                font-size: x-large;
+            }
+        }
+        .table {
+            &::v-deep * {
+                color: transparent !important;
+            }
+        }
     }
 }
 
@@ -78,6 +169,18 @@
 
                 border-bottom: 1px dashed #444444;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 512px) {
+    #hackathonBanner {
+        .title {
+            margin: {
+                bottom: 32px;
+                left: auto;
+                right: auto;
+            };
         }
     }
 }

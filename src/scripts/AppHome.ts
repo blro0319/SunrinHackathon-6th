@@ -1,5 +1,6 @@
 import { Vue, Component } from "vue-property-decorator";
-
+import HackathonEvents from '@/lib/HackathonEvents';
+// Components //
 import HackathonTimer from "@/components/HackathonTimer.vue";
 import HackathonCalendarTable from "@/components/HackathonCalendarTable.vue";
 import HackathonTitle from "@/components/HackathonTitle.vue";
@@ -11,4 +12,12 @@ import HackathonTitle from "@/components/HackathonTitle.vue";
         "hackathon-calendar-table": HackathonCalendarTable
     }
 })
-export default class AppHome extends Vue { }
+export default class AppHome extends Vue {
+    showCalendar: boolean = false;
+
+    created() {
+        setInterval(() => {
+            this.showCalendar = Date.now() >= HackathonEvents["hackathon-start"].date.getTime();
+        }, 10);
+    }
+}

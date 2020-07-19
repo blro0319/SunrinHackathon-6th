@@ -1,5 +1,5 @@
 <template>
-    <div class="hackathon-calendar-table">
+    <div :class="`hackathon-calendar-table ${isdummy ? 'dummy' : ''}`">
         <div
             v-for="(date, index) in calendarKeys"
             :key="`${index}_${getDateCalendar(date).title}`"
