@@ -43,6 +43,15 @@
         right: 0;
     }
 }
+@media screen and (max-width: 512px) {
+    #hackathonBanner .title {
+        margin: {
+            bottom: 32px;
+            left: auto;
+            right: auto;
+        };
+    }
+}
 
 #hackathonNotice {
     padding: {
@@ -145,28 +154,30 @@
         }
     }
     .sunrinnyang-bot .sunrinnyang-photos {
+        $photo-size: 100px;
+        $gap-size: 4px;
+
         display: grid;
 
         position: relative;
 
-        width: 200px;
-        height: 200px;
+        flex-shrink: 0;
 
         border-radius: 16px;
 
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(2, auto);
-        gap: 8px;
+        grid-template-columns: repeat(2, $photo-size);
+        grid-template-rows: repeat(2, $photo-size);
+        gap: $gap-size;
 
         overflow: hidden;
 
         img {
-            width: 96px;
+            width: $photo-size;
 
             transition: transform 0.15s;
 
             &:hover {
-                transform: scale(2.09);
+                transform: scale(#{($photo-size * 2 + $gap-size) / $photo-size});
             }
 
             &:nth-child(1) {
@@ -230,9 +241,31 @@
         }
     }
 }
+@media screen and (max-width: 600px) {
+    #hackathonNotice > section {
+        width: 100%;
+
+        .contents {
+            flex-direction: column;
+
+            > *:first-child:not(:last-child) {
+                margin: {
+                    bottom: 16px;
+                    right: 0 !important;
+                };
+            }
+            .desc {
+                text-align: center;
+            }
+        }
+    }
+}
 
 #hackathonCalendar {
-    padding: 64px 0;
+    padding: {
+        top: 64px;
+        bottom: 128px;
+    }
 
     .table {
         margin: 0 auto;
@@ -324,18 +357,6 @@
 
                 border-bottom: 1px dashed #444444;
             }
-        }
-    }
-}
-
-@media screen and (max-width: 512px) {
-    #hackathonBanner {
-        .title {
-            margin: {
-                bottom: 32px;
-                left: auto;
-                right: auto;
-            };
         }
     }
 }

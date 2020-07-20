@@ -14,10 +14,12 @@ import HackathonTitle from "@/components/HackathonTitle.vue";
 })
 export default class AppHome extends Vue {
     showCalendar: boolean = false;
+    showApply: boolean = false;
 
     created() {
         setInterval(() => {
             this.showCalendar = Date.now() >= HackathonEvents["hackathon-start"].date.getTime();
+            this.showApply = Date.now() >= HackathonEvents["apply-start"].date.getTime();
         }, 10);
     }
 }

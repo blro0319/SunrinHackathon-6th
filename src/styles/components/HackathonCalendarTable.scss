@@ -9,18 +9,27 @@
     display: flex;
 
     width: fit-content;
+    max-width: 100vw;
 
-    overflow: hidden;
+    overflow: auto hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 $date-width: 360px;
 $date-gap: 16px;
 $date-border-color: #bbbbbb;
+$title-height: 64px;
+$title-background-color: $base-theme-background-color;
 .date {
-    $title-height: 64px;
-    $title-background-color: $base-theme-background-color;
+    width: 100vw;
+    max-width: $date-width;
 
-    width: $date-width;
+    scroll-snap-align: center;
 
     &:not(:first-child) .title::before {
             left: -$title-height / 2;
@@ -43,8 +52,10 @@ $date-border-color: #bbbbbb;
 
         position: relative;
 
-        width: $date-width;
+        width: 100%;
         height: $title-height;
+
+        flex-shrink: 0;
 
         background-color: $title-background-color;
 
@@ -130,6 +141,32 @@ $date-border-color: #bbbbbb;
 
                 color: $text-color-black-disable;
                 font-size: small;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    $date-gap: 32px;
+
+    .date {
+        min-width: calc(100vw - #{$date-gap});
+        width: calc(100vw - #{$date-gap});
+        max-width: calc(100vw - #{$date-gap});
+        margin: 0 !important;
+        padding: 0 $date-gap;
+
+        &:not(:first-child) .title::before {
+            left: -$title-height / 2;
+    
+            background-image: diamondShapeImage($base-background-color);
+        }
+        &:not(:last-child) {
+            .title::after {
+                z-index: 1;
+                right: -$title-height / 2;
+    
+                background-image: diamondShapeImage($title-background-color);
             }
         }
     }

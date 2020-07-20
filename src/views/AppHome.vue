@@ -57,7 +57,7 @@
                         여러 정보를 보여주고 미니 게임을 관리해주는 친구입니다.<br>
                         <br>
                         그리고 선린냥이의 프로필은 투표로 결정됩니다.<br>
-                        신청할 때 가장 귀여운 프로필을 투표해주세요 :3
+                        신청할 때 가장 귀여운 사진에 투표해주세요 :3
                     </p>
                 </div>
             </section>
@@ -71,7 +71,13 @@
                         잘못 입력한 경우 아래 문의처로 연락해주세요 :D
                     </p>
                 </div>
-                <a href="" target="_blank" class="link-apply">신청하기</a>
+                <a
+                    v-if="showApply"
+                    href=""
+                    target="_blank"
+                    class="link-apply"
+                >신청하기</a>
+                <span v-else class="link-apply">신청 대기</span>
             </section>
             <hr>
             <section class="help">
