@@ -4,8 +4,8 @@
     > article,
     > section {
         h2 {
-            margin-bottom: 32px;
-    
+            margin-bottom: 64px;
+
             font-size: xxx-large;
             text-align: center;
         }
@@ -52,11 +52,7 @@
 
     > section {
         width: fit-content;
-        margin: {
-            bottom: 64px;
-            left: auto;
-            right: auto;
-        };
+        margin: 0 auto;
         padding: 0 24px;
 
         &:last-child {
@@ -80,7 +76,7 @@
             }
 
             > *:first-child:not(:last-child) {
-                margin-right: 16px;
+                margin-right: 32px;
             }
             .desc {
                 color: $text-color-black-desc;
@@ -94,7 +90,14 @@
             }
         }
     }
-    .discord-brand {
+    > hr {
+        width: 128px;
+        margin: 64px auto;
+
+        border: 1px solid $base-grid-color;
+    }
+
+    .use-discord .discord-brand {
         display: flex;
 
         position: relative;
@@ -139,6 +142,91 @@
             color: $text-color-black-disable;
             font-size: small;
             text-align: center;
+        }
+    }
+    .sunrinnyang-bot .sunrinnyang-photos {
+        display: grid;
+
+        position: relative;
+
+        width: 200px;
+        height: 200px;
+
+        border-radius: 16px;
+
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        gap: 8px;
+
+        overflow: hidden;
+
+        img {
+            width: 96px;
+
+            transition: transform 0.15s;
+
+            &:hover {
+                transform: scale(2.09);
+            }
+
+            &:nth-child(1) {
+                transform-origin: top left;
+            }
+            &:nth-child(2) {
+                transform-origin: top right;
+            }
+            &:nth-child(3) {
+                transform-origin: bottom left;
+            }
+            &:nth-child(4) {
+                transform-origin: bottom right;
+            }
+        }
+    }
+    .apply .link-apply {
+        display: block;
+
+        width: fit-content;
+        margin: 0 auto;
+        padding: 8px 16px;
+
+        background-color: $base-theme-background-color;
+
+        color: $text-color-white;
+        font-size: large;
+    }
+    .help .contents {
+        flex-direction: column;
+
+        .desc {
+            margin: {
+                bottom: 16px;
+                right: 0 !important;
+            }
+        }
+        .facebook {
+            display: flex;
+
+            align-items: center;
+
+            .logo {
+                width: 40px;
+                height: 40px;
+                margin-right: 8px;
+            }
+            .tag {
+                border-bottom: 2px solid $text-color-black-disable;
+
+                color: $text-color-black-disable;
+                font-size: large;
+
+                transition: border-color 0.1s, color 0.1s;
+            }
+            &:hover .tag {
+                border-color: $text-color-black-desc;
+
+                color: $text-color-black-desc;
+            }
         }
     }
 }

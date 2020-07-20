@@ -16,6 +16,7 @@
                     </p>
                 </div>
             </section>
+            <hr>
             <section class="use-discord">
                 <h3>온라인 진행</h3>
                 <div class="contents">
@@ -40,23 +41,58 @@
                         <span class="info">Discord 홈페이지 바로가기</span>
                     </a>
                 </div>
+            </section>
+            <hr>
+            <section class="sunrinnyang-bot">
+                <h3>선린냥 봇</h3>
                 <div class="contents">
+                    <div class="sunrinnyang-photos">
+                        <img src="@/assets/images/sunrinnyang_0.png" alt="구르밍하는 선린냥이">
+                        <img src="@/assets/images/sunrinnyang_1.png" alt="졸고 있는 선린냥이">
+                        <img src="@/assets/images/sunrinnyang_2.png" alt="않아있는 선린냥이">
+                        <img src="@/assets/images/sunrinnyang_3.png" alt="간식 먹는 선린냥이">
+                    </div>
                     <p class="desc">
-                        Discord에서 도움이 필요하면 선린냥이를 찾아보세요!<br>
-                        다양한 정보를 보여주고 미니게임을 도와줍니다 :3
+                        해커톤 Discord 서버를 관리해 줄 선린냥 봇을 소개합니다!<br>
+                        여러 정보를 보여주고 미니 게임을 관리해주는 친구입니다.<br>
+                        <br>
+                        그리고 선린냥이의 프로필은 투표로 결정됩니다.<br>
+                        신청할 때 가장 귀여운 프로필을 투표해주세요 :3
                     </p>
                 </div>
             </section>
+            <hr>
             <section class="apply">
                 <h3>신청하기</h3>
                 <div class="contents">
                     <p class="desc">
                         신청을 하기 위해서는 구글 계정이 필요합니다!<br>
-                        또한 응답은 1인당 1번으로 제한됩니다.<br>
+                        또한 응답 횟수는 1번으로 제한됩니다.<br>
                         잘못 입력한 경우 아래 문의처로 연락해주세요 :D
                     </p>
                 </div>
-                <a href="" class="link-apply">신청하기</a>
+                <a href="" target="_blank" class="link-apply">신청하기</a>
+            </section>
+            <hr>
+            <section class="help">
+                <h3>도움</h3>
+                <div class="contents">
+                    <p class="desc">
+                        담당자 전화번호: 010-4626-3105
+                    </p>
+                    <a
+                        href="https://www.facebook.com/sunrinhackathon"
+                        target="_blank"
+                        class="facebook"
+                    >
+                        <img
+                            src="@/assets/images/facebook_logo.svg"
+                            alt="페이스북"
+                            class="logo"
+                        >
+                        <span class="tag">@sunrinhackathon</span>
+                    </a>
+                </div>
             </section>
         </article>
 
