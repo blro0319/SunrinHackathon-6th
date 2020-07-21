@@ -66,4 +66,46 @@ footer {
     height: $footer-height;
 
     background-color: $base-theme-background-color;
+
+    color: $text-color-white;
+    font-size: medium;
+
+    .contents {
+        display: flex;
+
+        height: 100%;
+        padding: 0 32px;
+
+        justify-content: space-between;
+        align-items: center;
+
+        .author {
+            display: flex;
+
+            height: 96px;
+            padding-left: 32px;
+
+            border-left: 3px solid $base-theme-color;
+            border-radius: 3px;
+
+            flex-direction: column;
+            justify-content: center;
+
+            *:not(:first-child) {
+                margin-top: 8px;
+            }
+            .github {
+                width: fit-content;
+
+                img {
+                    width: 32px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    footer {
+        font-size: small;
+    }
 }

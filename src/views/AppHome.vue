@@ -33,14 +33,17 @@
                     <a
                         href="https://discord.com/new"
                         target="_blank"
+                        rel="noopener"
                         class="discord-brand"
                     >
                         <img
                             src="https://discord.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg"
+                            alt="Discord 로고"
                             class="blue"
                         >
                         <img
                             src="@/assets/images/Discord-Logo-White.svg"
+                            alt="Discord 로고 그림자"
                             class="white"
                         >
                         <span class="info">Discord 홈페이지 바로가기</span>
@@ -92,11 +95,12 @@
                 <h3>도움</h3>
                 <div class="contents">
                     <p class="desc">
-                        담당자 전화번호: 010-4626-3105
+                        담당자 전화번호: <a href="tel:010-4626-3105">010-4626-3105</a>
                     </p>
                     <a
                         href="https://fb.me/sunrinhackathon"
                         target="_blank"
+                        rel="noopener"
                         class="facebook"
                     >
                         <img
