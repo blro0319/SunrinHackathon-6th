@@ -9,13 +9,11 @@
                     <a
                         href="https://github.com/GyeongTae0319/SunrinHackathon-6th"
                         target="_blank"
+                        rel="noopener"
                         class="github"
                     >
                         <img src="@/assets/images/github_icon.svg" alt="깃허브 로고">
                     </a>
-                </div>
-                <div class="deco">
-
                 </div>
             </div>
         </footer>
