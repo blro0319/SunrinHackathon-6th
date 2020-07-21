@@ -5,18 +5,15 @@
 
     width: fit-content;
 
-    grid-template-columns: repeat(2, 280px);
+    grid-template-columns: repeat(2, 320px);
     gap: 16px 32px;
 }
-
 .item {
     display: flex;
 
     width: 100%;
 
     align-items: center;
-
-    font-size: large;
 
     .name {
         display: flex;
@@ -25,6 +22,8 @@
 
         align-items: center;
 
+        font-size: x-large;
+
         &::after {
             content: "";
 
@@ -32,7 +31,30 @@
 
             flex-grow: 1;
 
-            border-top: 2px dashed $base-theme-color;
+            border-top: 2px dashed $text-color-black-disable;
+        }
+    }
+    .price {
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 720px) {
+    .hackathon-point-menu {
+        grid-template-columns: 380px;
+
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 425px) {
+    .hackathon-point-menu {
+        width: 100%;
+        padding: 0 32px;
+
+        grid-template-columns: 100%;
+
+        .name {
+            font-size: large;
         }
     }
 }

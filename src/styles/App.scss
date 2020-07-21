@@ -33,6 +33,7 @@ html {
 
     overflow: hidden;
 
+    // Default font style
     color: $text-color-black;
     font: {
         size: 15px;
@@ -55,6 +56,14 @@ html {
     }
 }
 
+// Main contents
 #app {
     background-color: $base-background-color;
+}
+
+$footer-height: 200px;
+footer {
+    height: $footer-height;
+
+    background-color: $base-theme-background-color;
 }

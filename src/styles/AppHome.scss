@@ -47,19 +47,23 @@
     .timer {
         margin: 0 auto;
     }
-    .moon {
-        position: absolute;
-        bottom: 0;
-        right: 0;
+}
+@media screen and (max-width: 1024px) {
+    #hackathonBanner {
+        background-position: top 10% right 10%, center;
     }
 }
 @media screen and (max-width: 512px) {
-    #hackathonBanner .title {
-        margin: {
-            bottom: 32px;
-            left: auto;
-            right: auto;
-        };
+    #hackathonBanner {
+        background-size: 169px, 100%;
+
+        .title {
+            margin: {
+                bottom: 32px;
+                left: auto;
+                right: auto;
+            }
+        }
     }
 }
 
@@ -215,7 +219,7 @@
         background-color: $base-theme-background-color;
 
         color: $text-color-white;
-        font-size: large;
+        font-size: x-large;
 
         &.disable {
             cursor: not-allowed;

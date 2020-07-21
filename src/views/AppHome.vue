@@ -1,12 +1,16 @@
 <template>
     <main id="appHome">
+        <!-- Title banner -->
         <section id="hackathonBanner">
             <hackathon-title class="title" />
             <hackathon-timer class="timer" />
         </section>
 
+        <!-- Main contents -->
+        <!-- Intro -->
         <article id="hackathonNotice">
             <h2>대회 안내</h2>
+            <!-- Summary -->
             <section class="summary">
                 <h3>해커톤이란?</h3>
                 <div class="contents">
@@ -17,6 +21,7 @@
                 </div>
             </section>
             <hr>
+            <!-- Online notice -->
             <section class="use-discord">
                 <h3>온라인 진행</h3>
                 <div class="contents">
@@ -43,6 +48,7 @@
                 </div>
             </section>
             <hr>
+            <!-- Discord bot -->
             <section class="sunrinnyang-bot">
                 <h3>선린냥 봇</h3>
                 <div class="contents">
@@ -62,6 +68,7 @@
                 </div>
             </section>
             <hr>
+            <!-- Apply link -->
             <section class="apply">
                 <h3>신청하기</h3>
                 <div class="contents">
@@ -80,6 +87,7 @@
                 <span v-else class="link-apply disable">신청 대기</span>
             </section>
             <hr>
+            <!-- Help list -->
             <section class="help">
                 <h3>도움</h3>
                 <div class="contents">
@@ -87,7 +95,7 @@
                         담당자 전화번호: 010-4626-3105
                     </p>
                     <a
-                        href="https://www.facebook.com/sunrinhackathon"
+                        href="https://fb.me/sunrinhackathon"
                         target="_blank"
                         class="facebook"
                     >
@@ -101,12 +109,13 @@
                 </div>
             </section>
         </article>
-
         <hr>
-
+        <!-- Schedule -->
         <article id="hackathonCalendar">
             <h2>대회 일정</h2>
+            <!-- Show -->
             <hackathon-calendar-table v-if="showCalendar" class="table" />
+            <!-- Hidden -->
             <section v-else class="hidden">
                 <div class="info">
                     <span class="desc">참가자 OT 때 공개됩니다</span>
@@ -114,12 +123,13 @@
                 <hackathon-calendar-table isdummy class="table" />
             </section>
         </article>
-
         <hr>
-
+        <!-- Point shop -->
         <article id="hackathonPointMenu">
             <h2>포인트 교환소</h2>
-            <hackathon-point-menu v-if="!showPointMenu" class="menu" />
+            <!-- Show -->
+            <hackathon-point-menu v-if="showPointMenu" class="menu" />
+            <!-- Hidden -->
             <section v-else class="hidden">
                 <div class="info">
                     <span class="desc">대회 당일 공개됩니다</span>

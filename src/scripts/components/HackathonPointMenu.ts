@@ -29,6 +29,9 @@ export default class HackathonPointMenu extends Vue {
     }
 
     numberFormat(num: number) {
+        if (num.toString() == "Infinity") {
+            return "∞";
+        }
         return num.toString().replace(/\d(?=(\d{3})+$)/g, "$&,");
     }
 }
