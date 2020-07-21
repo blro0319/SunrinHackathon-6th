@@ -5,7 +5,7 @@ import HackathonCalendar, { DateCalendar, HackathonCalendarDummy } from "@/lib/H
 export default class HackathonCalendarTable extends Vue {
     @Prop({
         type: Boolean,
-        default: false,
+        default: false
     }) private isdummy!: boolean;
 
     calendar!: { [key: string]: DateCalendar };

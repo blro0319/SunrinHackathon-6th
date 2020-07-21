@@ -56,7 +56,7 @@
                         해커톤 Discord 서버를 관리해 줄 선린냥 봇을 소개합니다!<br>
                         여러 정보를 보여주고 미니 게임을 관리해주는 친구입니다.<br>
                         <br>
-                        그리고 선린냥이의 프로필은 투표로 결정됩니다.<br>
+                        그리고 선린냥의 프로필은 투표로 결정됩니다.<br>
                         신청할 때 가장 귀여운 사진에 투표해주세요 :3
                     </p>
                 </div>
@@ -73,11 +73,11 @@
                 </div>
                 <a
                     v-if="showApply"
-                    href=""
+                    href="https://forms.gle/HKNBzycKj7cfZwcf7"
                     target="_blank"
                     class="link-apply"
                 >신청하기</a>
-                <span v-else class="link-apply">신청 대기</span>
+                <span v-else class="link-apply disable">신청 대기</span>
             </section>
             <hr>
             <section class="help">
@@ -102,6 +102,8 @@
             </section>
         </article>
 
+        <hr>
+
         <article id="hackathonCalendar">
             <h2>대회 일정</h2>
             <hackathon-calendar-table v-if="showCalendar" class="table" />
@@ -113,29 +115,16 @@
             </section>
         </article>
 
-        <article class="menu">
+        <hr>
+
+        <article id="hackathonPointMenu">
             <h2>포인트 교환소</h2>
-            <section class="contents">
-                <div class="left">
-                    <div class="item">
-                        <span class="name">코카콜라</span>
-                        <span class="price">1,000P</span>
-                    </div>
-                    <div class="item">
-                        <span class="name">몬스터</span>
-                        <span class="price">2,000P</span>
-                    </div>
+            <hackathon-point-menu v-if="!showPointMenu" class="menu" />
+            <section v-else class="hidden">
+                <div class="info">
+                    <span class="desc">대회 당일 공개됩니다</span>
                 </div>
-                <div class="right">
-                    <div class="item">
-                        <span class="name">펩시</span>
-                        <span class="price">10,000P</span>
-                    </div>
-                    <div class="item">
-                        <span class="name">100P</span>
-                        <span class="price">1,000P</span>
-                    </div>
-                </div>
+                <hackathon-point-menu isdummy class="menu" />
             </section>
         </article>
     </main>
