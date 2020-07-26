@@ -77,13 +77,13 @@
                 <div class="contents">
                     <p class="desc">
                         신청을 하기 위해서는 구글 계정이 필요합니다!<br>
-                        또한 응답 횟수는 1번으로 제한됩니다.<br>
+                        또한 응답 횟수는 한번으로 제한됩니다.<br>
                         잘못 입력한 경우 아래 문의처로 연락해주세요 :D
                     </p>
                 </div>
                 <a
                     v-if="showApply"
-                    href="https://forms.gle/HKNBzycKj7cfZwcf7"
+                    href="https://forms.gle/CUeHXn1NyWutVvJG8"
                     target="_blank"
                     class="link-apply"
                 >신청하기</a>
