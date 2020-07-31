@@ -113,6 +113,7 @@
 						<a
 							href="http://www.nowtakeit.com/"
 							target="_blank"
+							rel="noopener"
 							class="link"
 						>
 							<span class="name">테이킷</span>
