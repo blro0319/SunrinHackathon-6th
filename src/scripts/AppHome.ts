@@ -15,15 +15,45 @@ import HackathonPointMenu from "@/components/HackathonPointMenu.vue";
     }
 })
 export default class AppHome extends Vue {
-    showApply: boolean = false;
-    showCalendar: boolean = false;
-    showPointMenu: boolean = false;
+	showApply: boolean = false;
+	endApply: boolean = false;
+	showCalendar: boolean = false;
+	showPointMenu: boolean = false;
+	showTeams: boolean = false;
 
-    created() {
-        setInterval(() => {
-            this.showApply = Date.now() >= HackathonEvents["apply-start"].date.getTime();
-            this.showCalendar = Date.now() >= HackathonEvents["orientation"].date.getTime();
-            this.showPointMenu = Date.now() >= HackathonEvents["hackathon-start"].date.getTime();
-        }, 10);
-    }
+	timeGap: number = 0;
+
+	created() {
+		let current: Date;
+		this.getJson("http://worldtimeapi.org/api/timezone/Asia/Seoul", (status, response) => {
+			if (status === null) {
+				current = new Date(response.datetime);
+				this.timeGap = Date.now() - current.getTime();
+			} else return;
+		});
+
+		setInterval(() => {
+			let now: number = Date.now() - this.timeGap;
+			this.showApply = now >= HackathonEvents["apply-start"].date.getTime();
+			this.endApply = now >= HackathonEvents["apply-end"].date.getTime();
+			this.showCalendar = now >= HackathonEvents["orientation"].date.getTime();
+			this.showPointMenu = now >= HackathonEvents["hackathon-start"].date.getTime();
+			this.showTeams = now >= HackathonEvents["open-teams"].date.getTime();
+		}, 10);
+	}
+
+	getJson(url: string, callback: (status: number | null, response: any) => void) {
+		let httpRequest = new XMLHttpRequest();
+		httpRequest.open("GET", url, true);
+		httpRequest.responseType = 'json';
+		httpRequest.onload = function() {
+			let status = httpRequest.status;
+			if (status === 200) {
+				callback(null, httpRequest.response);
+			} else {
+				callback(status, httpRequest.response);
+			}
+		};
+		httpRequest.send();
+	}
 }

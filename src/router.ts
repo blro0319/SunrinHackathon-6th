@@ -8,7 +8,11 @@ const routes: Array<RouteConfig> = [
     {
         path: "/",
         component: Home
-    }
+	},
+	{
+		path:"/teams",
+		component: () => import("@/views/HackathonTeams.vue")
+	}
 ];
 
 const router = new VueRouter({

@@ -276,6 +276,10 @@
 				bottom: 16px;
 				right: 0 !important;
 			}
+
+			.tel {
+				border-bottom: 2px solid $text-color-black-desc;
+			}
 		}
 		.facebook {
 			$logo-size: 40px;

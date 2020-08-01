@@ -82,12 +82,31 @@
 					</p>
 				</div>
 				<a
-					v-if="showApply"
+					v-if="showApply && !endApply"
 					href="https://forms.gle/CUeHXn1NyWutVvJG8"
 					target="_blank"
 					class="link-apply"
 				>신청하기</a>
-				<span v-else class="link-apply disable">신청 대기</span>
+				<span v-else-if="!endApply" class="link-apply disable">신청 대기</span>
+				<span v-else class="link-apply disable">신청 완료</span>
+			</section>
+			<hr>
+			<section class="teams">
+				<h3>참가 팀 발표</h3>
+				<div class="contents">
+					<p v-if="!showTeams" class="desc">
+						신청서 심사 중 입니다.<br>
+						발표 시간은 위에 타이머를 참고해주세요!
+					</p>
+					<div v-else class="check">
+						<input
+							type="text"
+							placeholder="팀 이름을 적어주세요"
+							v-model="teamname"
+							class="name"
+						>
+					</div>
+				</div>
 			</section>
 			<hr>
 			<section class="sponsor">
@@ -128,7 +147,10 @@
 				<h3>문의</h3>
 				<div class="contents">
 					<p class="desc">
-						담당자 전화번호: <a href="tel:010-4626-3105">010-4626-3105</a>
+						담당자 전화번호:
+						<a href="tel:010-4626-3105" class="tel">
+							010-4626-3105
+						</a>
 					</p>
 					<a
 						href="https://fb.me/sunrinhackathon"
