@@ -317,21 +317,27 @@
 	}
 }
 @media screen and (max-width: 600px) {
-	#hackathonNotice > section {
-		width: 100%;
+	#hackathonNotice {
+		> section {
+			width: 100%;
 
-		.contents {
-			flex-direction: column;
+			.contents {
+				flex-direction: column;
 
-			> *:first-child:not(:last-child) {
-				margin: {
-					bottom: 16px;
-					right: 0 !important;
-				};
+				> *:first-child:not(:last-child) {
+					margin: {
+						bottom: 16px;
+						right: 0 !important;
+					};
+				}
+				.desc {
+					text-align: center;
+				}
 			}
-			.desc {
-				text-align: center;
-			}
+		}
+
+		.sponsor .link {
+			margin: 0 auto;
 		}
 	}
 }
