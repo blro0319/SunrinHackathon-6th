@@ -72,7 +72,7 @@
 			</section>
 			<hr>
 			<!-- Apply link -->
-			<section class="apply">
+			<section v-if="!endApply" class="apply">
 				<h3>신청하기</h3>
 				<div class="contents">
 					<p class="desc">
@@ -90,8 +90,7 @@
 				<span v-else-if="!endApply" class="link-apply disable">신청 대기</span>
 				<span v-else class="link-apply disable">신청 완료</span>
 			</section>
-			<hr>
-			<section class="teams">
+			<section v-else class="teams">
 				<h3>참가 팀 발표</h3>
 				<div class="contents">
 					<p v-if="!showTeams" class="desc">
@@ -101,10 +100,31 @@
 					<div v-else class="check">
 						<input
 							type="text"
-							placeholder="팀 이름을 적어주세요"
-							v-model="teamname"
+							placeholder="팀 이름을 검색해보세요"
 							class="name"
 						>
+						<p class="desc">
+							심사 결과는 아래와 같습니다!<br>
+							신청해주신 모든 분들께 감사드립니다 :)
+						</p>
+						<div class="list">
+							<div class="group life">
+								<span class="title">생활</span>
+								<span
+									v-for="(value, index) in passedTeams.life"
+									:key="`${index}_${value}`"
+									class="team"
+								>{{ value }}</span>
+							</div>
+							<div class="group game">
+								<span class="title">게임</span>
+								<span
+									v-for="(value, index) in passedTeams.game"
+									:key="`${index}_${value}`"
+									class="team"
+								>{{ value }}</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

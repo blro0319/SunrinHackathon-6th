@@ -1,5 +1,6 @@
 import { Vue, Component } from "vue-property-decorator";
 import HackathonEvents from '@/lib/HackathonEvents';
+import HackathonTeams from "@/lib/HackathonTeams";
 // Components //
 import HackathonTimer from "@/components/HackathonTimer.vue";
 import HackathonCalendarTable from "@/components/HackathonCalendarTable.vue";
@@ -20,6 +21,8 @@ export default class AppHome extends Vue {
 	showCalendar: boolean = false;
 	showPointMenu: boolean = false;
 	showTeams: boolean = false;
+
+	passedTeams: { "life": string[], "game": string[] } = HackathonTeams;
 
 	timeGap: number = 0;
 

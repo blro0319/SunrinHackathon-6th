@@ -3,109 +3,111 @@
 
 // Remove initial properties
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 
-    background: none;
+	outline: none;
 
-    box-sizing: border-box;
+	background: none;
 
-    // Text styles
-    color: inherit;
-    font: inherit;
-    text-decoration: none;
+	box-sizing: border-box;
 
-    // Touch highlight disable
-    -webkit-tap-highlight-color: transparent;
-    // Click and touch selection
-    -webkit-touch-callout: inherit;
-      -webkit-user-select: inherit;
-       -khtml-user-select: inherit;
-         -moz-user-select: inherit;
-          -ms-user-select: inherit;
-              user-select: inherit;
+	// Text styles
+	color: inherit;
+	font: inherit;
+	text-decoration: none;
+
+	// Touch highlight disable
+	-webkit-tap-highlight-color: transparent;
+	// Click and touch selection
+	-webkit-touch-callout: inherit;
+	  -webkit-user-select: inherit;
+	   -khtml-user-select: inherit;
+	     -moz-user-select: inherit;
+	      -ms-user-select: inherit;
+	          user-select: inherit;
 }
 
 // Root elements
 html {
-    // Full height
-    height: 100%;
+	// Full height
+	height: 100%;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    // Default font style
-    color: $text-color-black;
-    font: {
-        size: 15px;
-        family: "Godo", Roboto, "Helvetica Nenu", sans-serif
-    }
+	// Default font style
+	color: $text-color-black;
+	font: {
+		size: 15px;
+		family: "Godo", Roboto, "Helvetica Nenu", sans-serif;
+	}
 
-    // Click and touch selection disable
-    -webkit-touch-callout: none;
-      -webkit-user-select: none;
-       -khtml-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none;
+	// Click and touch selection disable
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+	     -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
 
-    body {
-        // Full height
-        height: 100%;
+	body {
+		// Full height
+		height: 100%;
 
-        overflow: hidden auto;
-    }
+		overflow: hidden auto;
+	}
 }
 
 // Main contents
 #app {
-    background-color: $base-background-color;
+	background-color: $base-background-color;
 }
 
 $footer-height: 200px;
 footer {
-    height: $footer-height;
+	height: $footer-height;
 
-    background-color: $base-theme-background-color;
+	background-color: $base-theme-background-color;
 
-    color: $text-color-white;
-    font-size: medium;
+	color: $text-color-white;
+	font-size: medium;
 
-    .contents {
-        display: flex;
+	.contents {
+		display: flex;
 
-        height: 100%;
-        padding: 0 32px;
+		height: 100%;
+		padding: 0 32px;
 
-        justify-content: space-between;
-        align-items: center;
+		justify-content: space-between;
+		align-items: center;
 
-        .author {
-            display: flex;
+		.author {
+			display: flex;
 
-            height: 96px;
-            padding-left: 32px;
+			height: 96px;
+			padding-left: 32px;
 
-            border-left: 3px solid $base-theme-color;
-            border-radius: 3px;
+			border-left: 3px solid $base-theme-color;
+			border-radius: 3px;
 
-            flex-direction: column;
-            justify-content: center;
+			flex-direction: column;
+			justify-content: center;
 
-            *:not(:first-child) {
-                margin-top: 8px;
-            }
-            .github {
-                width: fit-content;
+			*:not(:first-child) {
+				margin-top: 8px;
+			}
+			.github {
+				width: fit-content;
 
-                img {
-                    width: 32px;
-                }
-            }
-        }
-    }
+				img {
+					width: 32px;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 375px) {
-    footer {
-        font-size: small;
-    }
+	footer {
+		font-size: small;
+	}
 }
