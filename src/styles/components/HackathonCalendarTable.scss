@@ -133,6 +133,9 @@ $title-background-color: $base-theme-background-color;
 
             word-break: keep-all;
 
+			.name {
+				font-size: large;
+			}
             .desc {
                 margin-top: 8px;
                 padding-top: 8px;
